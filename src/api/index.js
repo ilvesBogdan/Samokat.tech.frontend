@@ -1,9 +1,10 @@
-import axios, { AxiosRequestConfig, AxiosInstance } from 'axios';
-import { defer, Observable, map, catchError, of } from 'rxjs';
+import axios from 'axios';
+import { defer, map } from 'rxjs';
 
 const baseURL = 'https://company.caaat.pro/api';
 
 class APIRequests {
+
     axiosConfig = {
         baseURL: `${baseURL}`,
         responseType: 'json',
@@ -15,7 +16,7 @@ class APIRequests {
     axiosConfigWithAuthorization = Object.assign({}, this.axiosConfig, {
         headers: {
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${localStorage.getItem('tocken')}` || '',
+            Authorization: `Bearer ${localStorage.getItem('token')}` || '',
         },
     });
 
@@ -35,14 +36,24 @@ class APIRequests {
     axiosInstanceWithAuthorization = this.axiosInit(this.axiosConfigWithAuthorization);
 
     post = (url, body) => {
-        return defer(() => this.axiosInstanceWithAuthorization.post(url, body)).pipe(
+        return defer(() => this.axiosInstance.post(url, body)).pipe(
             map((result) => result.data),
-            catchError((error) => {
-                console.error(error);
-                return of(null);
-            })
         );
     };
+
+    postWithAuth = (url, body) => {
+        return defer(() => this.axiosInstanceWithAuthorization.post(url, body)).pipe(
+            map((result) => result.data),
+        );
+    };
+
+    getWithAuth = (url, params) => {
+        return defer(() => this.axiosInstanceWithAuthorization.get(url, params)).pipe(
+            map((result) => result.data),
+        );
+    };
+
+
 }
 
 export const API = new APIRequests();
