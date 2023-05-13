@@ -1,0 +1,22 @@
+.footer {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: var(--radical-red)
+}
+
+.footer__logo {
+    font-weight: 800;
+}
+
+.footer a {
+    text-decoration: none;
+    color: var(--radical-red)
+}
