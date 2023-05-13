@@ -48,7 +48,11 @@ class APIRequests {
     };
 
     getWithAuth = (url, params) => {
-        return defer(() => this.axiosInstanceWithAuthorization.get(url, params)).pipe(
+        return defer(() => this.axiosInstanceWithAuthorization.get(url, params, {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}` || '',
+            },
+        })).pipe(
             map((result) => result.data),
         );
     };
