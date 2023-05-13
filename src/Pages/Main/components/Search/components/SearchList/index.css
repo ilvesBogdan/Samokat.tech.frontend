@@ -1,0 +1,4 @@
+.search-list {
+    width: var(--desktop-main-width);
+    padding: 0 6.5rem;
+}

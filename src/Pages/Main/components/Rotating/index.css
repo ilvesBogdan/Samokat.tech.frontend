@@ -1,0 +1,53 @@
+.rotating__sun {
+    display: block;
+    position: absolute;
+    top: calc(50vh - 18.5rem);
+    right: calc(50vw - 12rem - var(--desktop-main-width) / 2);
+    width: 37rem;
+    height: 37rem;
+
+    background-color: var(--joyful);
+    -webkit-mask-image: url('static/sun.svg');
+    mask-image: url('static/sun.svg');
+    mask-repeat: no-repeat;
+    mask-position: center;
+    border: solid var(--dynamic-black) 1px;
+
+    animation-name: rotating-anim;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 3s;
+}
+
+.rotating {
+    z-index: -10;
+}
+
+.rotating--invisible {
+    animation: rotating-anim-inv 1s forwards;
+}
+
+.rotating--visible {
+    animation: rotating-anim-inv-off 1s forwards;
+}
+
+@keyframes rotating-anim {
+    to {
+        rotate: 360deg;
+    }
+}
+
+@keyframes rotating-anim-inv {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes rotating-anim-inv-off {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

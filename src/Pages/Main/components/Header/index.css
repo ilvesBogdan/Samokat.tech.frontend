@@ -1,9 +1,11 @@
-.footer {
+.header {
     display: flex;
-    width: 100%;
+    margin-top: 3.1rem;
+    width: var(--desktop-main-width);
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
+    justify-content: space-between;
 
     font-style: normal;
     font-weight: 400;
@@ -12,11 +14,19 @@
     color: var(--radical-red)
 }
 
-.footer__logo {
+.header__logo {
+    width: 194px;
+    height: 74px;
     font-weight: 800;
 }
 
-.footer a {
+.header nav {
+    display: flex;
+    flex-direction: row;
+    grid-gap: 6.3rem;
+}
+
+.header a {
     text-decoration: none;
     color: var(--radical-red)
 }

@@ -1,12 +1,20 @@
 import './index.css'
-const Footer = ()=> {
+import logoPng from './static/logo.png';
+import logoWebP from './static/logo.webp';
+
+const Header = () => {
     return (
-        <footer className='footer'>
-            <span className='footer__logo'>САМОКАТ</span>
-            <a href='#'>Новости</a>
-            <a href='#'>Личный кабинет</a>
+        <footer className='header'>
+            <picture className='header__logo'>
+                <source srcSet={logoWebP} type='image/webp' />
+                <img src={logoPng} alt='САМОКАТ' />
+            </picture>
+            <nav>
+                <a href='#'>Новости</a>
+                <a href='#'>Личный кабинет</a>
+            </nav>
         </footer>
     );
 }
 
-export default Footer;
+export default Header;
