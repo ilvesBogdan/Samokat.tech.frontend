@@ -1,13 +1,14 @@
 const SearchList = (props) => {
+    const list = props.list || [];
+
     return (
         <div className='search-list'>
             <datalist id="search-form__data-list">
-                <option>Аперитивы</option>
-                <option>Горячие</option>
-                <option>Десертные</option>
-                <option>Диджестивы</option>
-                <option>Молочные</option>
-                <option>Слоистые</option>
+                {
+                    list.map((item) => {
+                        return (<option>{item.surname} {item.name} {item.patronymic}</option>);
+                    })
+                }
             </datalist>
         </div>
     );
