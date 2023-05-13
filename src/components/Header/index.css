@@ -1,6 +1,6 @@
 .header {
     display: flex;
-    margin-top: 3.1rem;
+    margin: 3.1rem auto 0 auto;
     width: var(--desktop-main-width);
     flex-direction: row;
     flex-wrap: nowrap;
@@ -29,4 +29,14 @@
 .header a {
     text-decoration: none;
     color: var(--radical-red)
+}
+
+.header a:hover, .header a:focus {
+    animation: header__a-hover .7s forwards;
+}
+
+@keyframes header__a-hover {
+    to {
+        text-shadow: 5px 4px 4px rgba(151, 143, 143, 0.65);
+    }
 }

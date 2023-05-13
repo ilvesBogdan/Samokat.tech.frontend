@@ -16,7 +16,7 @@
     animation-name: rotating-anim;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-    animation-duration: 3s;
+    animation-duration: 12s;
 }
 
 .rotating {
