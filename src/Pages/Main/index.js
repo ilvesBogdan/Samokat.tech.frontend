@@ -1,4 +1,4 @@
-import Header from "./components/Header";
+import Header from "../../components/Header";
 import Search from "./components/Search";
 import './index.css'
 

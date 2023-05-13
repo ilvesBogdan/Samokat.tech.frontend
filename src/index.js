@@ -4,12 +4,14 @@ import 'normalize.css'
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-import Main from "./Pages/Main";
+// import Main from "./Pages/Main";
+import AuthPage from './Pages/AuthPage';
+// import Profile from './Pages/Profile';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Main />
+    <AuthPage />
   </React.StrictMode>
 );
 
