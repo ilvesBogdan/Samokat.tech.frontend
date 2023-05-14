@@ -14,9 +14,9 @@ jobs:
         with:
           node-version: '18.x'
       - run: npm install
-        working-directory: ./site
+        working-directory: ./
       - run: npm run build
-        working-directory: ./site
+        working-directory: ./
 
       - name: Get current date
         id: date
@@ -24,7 +24,7 @@ jobs:
 
       - name: Pack build
         run: |
-          tar -czvf site-${{ steps.date.outputs.date }}.tar.gz -C ./site/build/ .
+          tar -czvf site-${{ steps.date.outputs.date }}.tar.gz -C ./build/ .
           cp site-* site-latest.tar.gz
 
       - name: Upload
