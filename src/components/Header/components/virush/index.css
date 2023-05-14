@@ -27,3 +27,13 @@
         rotate: 360deg;
     }
 }
+
+.circle:hover {
+    animation: header__a-hover .7s forwards;
+}
+
+@keyframes header__a-hover {
+    to {
+        transform: scale(1.2);
+    }
+}

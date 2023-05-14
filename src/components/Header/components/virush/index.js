@@ -1,7 +1,7 @@
 import './index.css';
 const Virush = () => {
     return (
-        <div className='circle' />
+        <a href='#' className='circle' />
     );
 }
 
