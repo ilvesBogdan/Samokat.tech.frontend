@@ -13,27 +13,12 @@ class APIRequests {
         },
     };
 
-    axiosConfigWithAuthorization = Object.assign({}, this.axiosConfig, {
-        headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${localStorage.getItem('token')}` || '',
-        },
-    });
-
-    setAxiosConfigWithAuthorization = (token) => {
-        if (this.axiosConfigWithAuthorization.headers) {
-            this.axiosConfigWithAuthorization.headers.Authorization = `Bearer ${token}`;
-            this.axiosInstanceWithAuthorization = this.axiosInit(this.axiosConfigWithAuthorization);
-        }
-    };
-
     axiosInit = (config) => {
         const axiosInstance = axios.create(config);
         return axiosInstance;
     };
 
     axiosInstance = this.axiosInit(this.axiosConfig);
-    axiosInstanceWithAuthorization = this.axiosInit(this.axiosConfigWithAuthorization);
 
     post = (url, body) => {
         return defer(() => this.axiosInstance.post(url, body)).pipe(
@@ -42,15 +27,22 @@ class APIRequests {
     };
 
     postWithAuth = (url, body) => {
-        return defer(() => this.axiosInstanceWithAuthorization.post(url, body)).pipe(
+        return defer(() => this.axiosInstance.post(url, body, {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}` || '',
+            }
+        })).pipe(
             map((result) => result.data),
         );
     };
 
     getWithAuth = (url, params) => {
-        return defer(() => this.axiosInstanceWithAuthorization.get(url, params, {
+        const token = `Bearer ${localStorage.getItem('token')}` || '';
+        console.log(params);
+        console.log(token);
+        return defer(() => this.axiosInstance.get(url, {
             headers: {
-                Authorization: `Bearer ${localStorage.getItem('token')}` || '',
+                Authorization: token,
             },
         })).pipe(
             map((result) => result.data),
