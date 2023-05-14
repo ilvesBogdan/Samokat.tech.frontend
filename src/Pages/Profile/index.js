@@ -9,24 +9,30 @@ import {catchError, finalize, of, tap} from "rxjs";
 import {useState} from "react";
 
 const Profile = () => {
-    const [profile, setProfile] = useState({
-        name: '',
-        avatar: ''
-    })
+    const [profile, setProfile] = useState({})
+    const [ok, setOk] = useState(true)
+    if (ok) {
     const currentUrl = window.location.href;
     const match = currentUrl.match(/lk\/(.+)/);
     if (match) {
         const id = match[1];
         console.log(id)
         API.getWithAuth('/user/' + id, {}).pipe(
-            tap((data) => setProfile(data)),
+            tap((data) => {
+                setProfile(data)
+                setOk(false);
+            }),
             catchError(() => {})
         ).subscribe();
     } else {
         API.getWithAuth('/user', {}).pipe(
-            tap((data) => setProfile(data)),
+            tap((data) => {
+                setProfile(data);
+                setOk(false);
+            }),
             catchError(() => {})
         ).subscribe();
+    }
     }
     return (
         <>
