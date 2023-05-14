@@ -1,6 +1,61 @@
 .auth {
     display: flex;
-    width: 20rem;
+    width: 38rem;
+    height: min-content;
     margin: 7rem auto;
+    align-items: center;
+    border-radius: 1.8rem;
     flex-direction: column;
+    background-color: var(--joyful);
+    padding: 4rem 2.5rem;
+}
+
+.auth input[type=email], .auth input[type=password] {
+    width: 100%;
+    margin: .75rem;
+    padding: .5rem 1rem;
+    border-radius: 2rem;
+    border: .2rem solid var(--radical-red);
+    background-color: var(--bleached-silk);
+
+    font-style: normal;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 42px;
+}
+
+.auth button[type=submit] {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+
+    margin-top: 3.3rem;
+    width: 170px;
+    height: 92px;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 56px;
+    color: var(--bleached-silk);
+
+    background-color: var(--radical-red);
+    box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+    border: none;
+    opacity: .80;
+    border-radius: 30px;
+}
+
+.auth span {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 75px;
+
+    text-transform: capitalize;
+    color: var(--radical-red);
+    opacity: 0.86;
+    margin: 2rem;
 }

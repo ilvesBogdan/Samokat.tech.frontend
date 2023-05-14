@@ -44,6 +44,7 @@ const AuthPage = () => {
                 e.preventDefault();
                 auth()
             }}>
+            <span>Вход</span>
             <input type="email" id='email' placeholder='Email' value={email} onChange={e => SetEmail(e.target.value)} />
             <input type="password" id='password' placeholder='Password' value={password} onChange={e => SetPassword(e.target.value)}  />
             <button type="submit">Войти</button>
