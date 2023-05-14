@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+env:
+  CI: false
 jobs:
   build:
     name: Build site
