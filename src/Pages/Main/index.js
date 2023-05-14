@@ -1,9 +1,9 @@
 import Header from "../../components/Header";
 import Search from "./components/Search";
-import './index.css'
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { catchError, finalize, of, tap } from 'rxjs';
-import { useState, useEffect } from "react";
+import './index.css'
 
 import { API } from "../../api"
 

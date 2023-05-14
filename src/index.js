@@ -10,14 +10,16 @@ import {
 } from 'react-router-dom';
 
 import AuthPage from './Pages/AuthPage';
+import Profile from  './Pages/Profile';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Router>
       <Routes>
         <Route path="/login" element={<AuthPage/>} />
+        <Route path="/news" element={<Main/>} />
+        <Route path="/lk" element={<Profile/>} />
         <Route path="/" element={<Main/>} />
-
       </Routes>
   </Router>
 );
