@@ -7,12 +7,12 @@ const Comment = (promt) => {
             <span>{promt.name}, спасибо тебе за то, что</span>
             <div className='profile__comment-block-flcol'>
                 <div className='profile__comment-block-flrow'>
-                    <div>Рабочий процесс</div>
-                    <div>Общение</div>
+                    <div class='icon4'>Рабочий процесс</div>
+                    <div class='icon3'>Общение</div>
                 </div>
                 <div className='profile__comment-block-flrow'>
-                    <div>Личные качества</div>
-                    <div>Достижения</div>
+                    <div class='icon1'>Личные качества</div>
+                    <div class='icon2'>Достижения</div>
                 </div>
             </div>
         </div>
