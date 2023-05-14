@@ -27,9 +27,10 @@ class APIRequests {
     };
 
     postWithAuth = (url, body) => {
+        const token = `Bearer ${localStorage.getItem('token')}` || '';
         return defer(() => this.axiosInstance.post(url, body, {
             headers: {
-                Authorization: `Bearer ${localStorage.getItem('token')}` || '',
+                Authorization: token,
             }
         })).pipe(
             map((result) => result.data),
@@ -38,8 +39,6 @@ class APIRequests {
 
     getWithAuth = (url, params) => {
         const token = `Bearer ${localStorage.getItem('token')}` || '';
-        console.log(params);
-        console.log(token);
         return defer(() => this.axiosInstance.get(url, {
             headers: {
                 Authorization: token,
