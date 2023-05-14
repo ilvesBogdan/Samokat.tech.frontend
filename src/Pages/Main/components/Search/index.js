@@ -3,12 +3,14 @@ import SearchList from './components/SearchList';
 import Rotating from "../Rotating";
 import './index.css'
 import { API } from "../../../../api"
-import { debounceTime, distinctUntilChanged, switchMap, Subject, tap, catchError, of } from 'rxjs';
+import {debounceTime, distinctUntilChanged, switchMap, Subject, tap, catchError, of, finalize} from 'rxjs';
+import {useNavigate} from "react-router-dom";
 
 const Search = () => {
     const searchSubject = new Subject();
     const [onFocus, setOnFocus] = useState(false);
     const [onResult, setInResult] = useState([]);
+    const navigate = useNavigate();
 
     searchSubject
         .pipe(
@@ -44,6 +46,23 @@ const Search = () => {
             <form className='search-form'
                 onFocus={() => setOnFocus(true)}
                 onBlur={() => setOnFocus(false)}
+                  onSubmit={(event) => {
+                      event.preventDefault();
+                      const text = event.target.querySelector('input[type=text]').value;
+                      API.postWithAuth('/user/search', {
+                      text: text
+                      }).pipe(
+                          tap((result) => {
+                              if (result.length > 0)
+                              navigate('/lk/' + result[0].id);
+                          }),
+                          catchError((error) => {
+                              alert(error);
+                              return of(null);
+                          }
+                      )).subscribe();
+
+                  }}
             >
                 <input type='submit' value='' />
                 <input

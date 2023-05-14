@@ -20,6 +20,7 @@ root.render(
         <Route path="/news" element={<Main/>} />
         <Route path="/lk" element={<Profile/>} />
         <Route path="/" element={<Main/>} />
+        <Route path="/lk/:id" element={<Profile/>} />
       </Routes>
   </Router>
 );
