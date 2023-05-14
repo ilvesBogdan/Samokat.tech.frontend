@@ -27,11 +27,34 @@
 }
 
 .header a {
+    font-family: inherit;
+    text-transform: uppercase;
     text-decoration: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
     color: var(--radical-red)
 }
 
-.header a:hover, .header a:focus {
+#btn-exit {
+    font-family: inherit;
+    color: inherit;
+    border: none;
+    background: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    outline: inherit;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 23px;
+    text-transform: uppercase;
+}
+
+.header a:hover, .header a:focus, #btn-exit:hover {
     animation: header__a-hover .7s forwards;
 }
 

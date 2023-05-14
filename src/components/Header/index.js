@@ -12,6 +12,7 @@ const Header = () => {
             <nav>
                 <a href='#'>Новости</a>
                 <a href='#'>Личный кабинет</a>
+                <button id='btn-exit'>Выход</button>
             </nav>
         </footer>
     );
