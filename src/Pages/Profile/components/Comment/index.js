@@ -1,10 +1,10 @@
 import './index.css';
 
-const Comment = () => {
+const Comment = (promt) => {
     return (
         <div className='profile-block profile-border profile__comment-block'>
-            <h3>Оставить Комплимент Олегу</h3>
-            <span>Олег, спасибо тебе за то, что</span>
+            <h3>Оставить Комплимент</h3>
+            <span>{promt.name}, спасибо тебе за то, что</span>
             <div className='profile__comment-block-flcol'>
                 <div className='profile__comment-block-flrow'>
                     <div>Рабочий процесс</div>

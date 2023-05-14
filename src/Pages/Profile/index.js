@@ -34,12 +34,13 @@ const Profile = () => {
         ).subscribe();
     }
     }
+    const profName = [profile.name, profile.surname, profile.patronymic].join(' ')
     return (
         <>
             <Header/>
             <main className='profile'>
-                <section className='profile__info'><ProfileInfo name={profile.name} photo={profile.avatar}/></section>
-                <section className='profile__comment'><Comment/></section>
+                <section className='profile__info'><ProfileInfo name={profName} photo={profile.avatar}/></section>
+                <section className='profile__comment'><Comment name={profile.name} /></section>
                 <section className='profile__achievements'><Achievements/></section>
                 <section className='profile__statistics'><Statistics/></section>
             </main>
