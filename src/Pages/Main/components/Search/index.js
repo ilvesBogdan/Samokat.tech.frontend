@@ -3,7 +3,7 @@ import SearchList from './components/SearchList';
 import Rotating from "../Rotating";
 import './index.css'
 import { API } from "../../../../api"
-import { debounceTime, distinctUntilChanged, switchMap, Subject, tap } from 'rxjs';
+import { debounceTime, distinctUntilChanged, switchMap, Subject, tap, catchError, of } from 'rxjs';
 
 const Search = () => {
     const searchSubject = new Subject();
@@ -20,6 +20,10 @@ const Search = () => {
             tap((result) => {
                 searchResult = result;
                 setInResult(searchResult);
+            }),
+            catchError((error) => {
+                console.error(error);
+                return of([]);
             })
         )
         .subscribe();
