@@ -59,3 +59,23 @@
     opacity: 0.86;
     margin: 2rem;
 }
+
+.auth::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 56rem;
+    height: 66rem;
+    z-index: -10;
+
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+
+    background-color: var(--joyful);
+    -webkit-mask-image: url('static/back.svg');
+    mask-image: url('static/back.svg');
+    mask-repeat: no-repeat;
+    mask-position: bottom right -12rem;
+    opacity: .5;
+}
