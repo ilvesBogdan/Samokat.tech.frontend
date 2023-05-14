@@ -5,13 +5,13 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 // import Main from "./Pages/Main";
-import AuthPage from './Pages/AuthPage';
-// import Profile from './Pages/Profile';
+// import AuthPage from './Pages/AuthPage';
+import Profile from './Pages/Profile';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AuthPage />
+    <Profile />
   </React.StrictMode>
 );
 

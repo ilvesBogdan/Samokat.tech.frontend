@@ -1,0 +1,38 @@
+.profile {
+    display: grid;
+    grid-row-gap: 1.8rem;
+    grid-column-gap: 7.6rem;
+    margin: 3rem auto 0 auto;
+    width: var(--desktop-main-width);
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+            "info comments"
+            "info achievements"
+            "info statistics";
+}
+
+.profile-block {
+    display: block;
+    overflow: hidden;
+    background-color: var(--joyful);
+}
+
+.profile-border {
+    border-radius: 1.5rem;
+}
+
+.profile__info {
+    grid-area: info;
+}
+
+.profile__comment {
+    grid-area: comments;
+}
+
+.profile__achievements {
+    grid-area: achievements;
+}
+
+.profile__statistics {
+    grid-area: statistics;
+}

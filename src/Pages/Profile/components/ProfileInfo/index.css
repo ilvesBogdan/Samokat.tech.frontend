@@ -1,0 +1,23 @@
+.profile-info__foto {
+    z-index: 1;
+}
+
+.profile-info__bloc-parent {
+    height: 5rem;
+}
+
+.profile-info {
+    width: 27.8rem;
+    height: 38.5rem;
+}
+
+.profile-info__block {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    position: relative;
+    top: -33.8rem;
+    left: 2.37rem;
+    z-index: -1;
+}
