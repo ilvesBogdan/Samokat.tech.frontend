@@ -2,8 +2,15 @@
     z-index: 1;
 }
 
+.profile-info__foto > * {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
 .profile-info__bloc-parent {
-    height: 5rem;
+    margin-top: auto;
+    height: 0;
 }
 
 .profile-info {
@@ -12,12 +19,16 @@
 }
 
 .profile-info__block {
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    align-items: center;
     position: relative;
-    top: -33.8rem;
+    top: -30.8rem;
     left: 2.37rem;
     z-index: -1;
+}
+
+.profile-info__block > div {
+    display: flex;
+    width: 100%;
+    height: calc(100% - 2rem);
+    justify-content: center;
+    align-items: end;
 }

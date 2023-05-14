@@ -5,6 +5,7 @@
     margin: 3rem auto 0 auto;
     width: var(--desktop-main-width);
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1.3fr .45fr 1.25fr;
     grid-template-areas:
             "info comments"
             "info achievements"

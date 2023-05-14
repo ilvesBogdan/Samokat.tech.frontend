@@ -2,7 +2,10 @@ import './index.css';
 
 const Statistics = () => {
     return (
-        <div className='profile-block profile-border'></div>
+        <div className='profile__statistics'>
+            <section className='profile-border'></section>
+            <section className='profile-border'></section>
+        </div>
     );
 }
 

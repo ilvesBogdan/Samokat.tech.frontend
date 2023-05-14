@@ -14,7 +14,7 @@ const Search = () => {
         .pipe(
             debounceTime(300),
             distinctUntilChanged(),
-            switchMap((text) => API.post('/user/searchShort', {
+            switchMap((text) => API.postWithAuth('/user/searchShort', {
                 text,
             })),
             tap((result) => {

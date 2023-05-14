@@ -5,10 +5,11 @@ import logoWebP from './static/logo.webp';
 const Header = () => {
     return (
         <footer className='header'>
+            < a href='/'>
             <picture className='header__logo'>
                 <source srcSet={logoWebP} type='image/webp' />
                 <img src={logoPng} alt='САМОКАТ' />
-            </picture>
+            </picture></a>
             <nav>
                 <a href='/news'>Новости</a>
                 <a href='/lk'>Личный кабинет</a>
